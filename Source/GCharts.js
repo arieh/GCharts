@@ -1,5 +1,42 @@
+/*
+---
+description: A Google Charts API helper class family
+
+license: MIT-style
+
+authors:
+- Arieh Glazer
+
+requires:
+- core/1.3 : [Core,Class,Class.Extras,Element,Element.Event,Array]
+
+provides: [Gestures,Gestures.Directions]
+
+...
+*/
+/*!
+Copyright (c) 2010 Arieh Glazer
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE 
+*/
 GCharts = new Class({
-    Implements : [Options,Events]
+    Implements : [Options]
     , image :null
     , options : {
         defaultColor : ''
@@ -44,7 +81,6 @@ GCharts = new Class({
         var $this = this;
         this.image = new Image();
         this.image.addEvent('load',function(){
-            $this.fireEvent('load',$this.image);
             if ($this.options.target) $this.image.inject($this.options.target);
         });
         this.image.src = this.src;
