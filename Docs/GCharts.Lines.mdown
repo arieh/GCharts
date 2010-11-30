@@ -1,0 +1,30 @@
+Class: GCharts.Lines {#GCharts.Lines}
+==========================================
+This Class creates a lines graph. 
+
+GCharts.Lines Method: constructor {#GCharts.Lines:constructor}
+-------------------------------------------------
+
+### Example:
+    
+    var lines = new GCharts.Lines(items[,options]);
+
+### items
+
+The items argument is an array of items. Each item should be a literal object with the following attribues:
+* name (`string`)
+* value (`Array`) A list of points for the lines. These can either be normal number values, or they can be arrays of [x,y] coordinates.
+* color (`string` optional) a 6 digit hex representation for the default color to use for chart items. If not supplied will use the #options.defaultColor setting
+* width (`int` optional) line width in pixels
+* dashs (`int` optional) for dashed lines - length in pixels of dashed segments. #options.spaces must also be supplied for this to work.
+* spaces (`int` optional) for dashed lines - length in pixels of space between dashs. #options.dashs must also be supplied for this to work.
+
+
+### Options:
+This class uses all of the options supplied by GCharts#options and GCharts.Graphs#options, with these additions/changes:
+
+* labels (`bool`) set to false by default
+* markers (`bool`) whether or not to display markers on each of the points of the graph. Default is `true`
+* markerColor  (`string`) a 6 digit hex representation for the marker color (if options#markers is set to true). Default is `0000000`.
+* showX /showY are set to false by default
+

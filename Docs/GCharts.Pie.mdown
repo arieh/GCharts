@@ -1,0 +1,23 @@
+Class: GCharts.Pie {#GCharts.Pie}
+==========================================
+This Class creates a pie chart. 
+
+GCharts.Pie Method: constructor {#GCharts.Pie:constructor}
+-------------------------------------------------
+
+### Example:
+    
+    var pie = new GCharts.Pie(items[,options]);
+
+### items
+
+The items argument is an array of items. Each item should be a literal object with the following attribues:
+* name (`string`)
+* value (`int`)
+* color (`string` optional) a 6 digit hex representation for the default color to use for chart items. If not supplied will use the #options.defaultColor setting
+
+
+### Options:
+This class uses all of the options supplied by GCharts#options and GCharts.Graphs#options, with these additions/changes:
+
+* 3d (`bool`) whether or not to use a 3D pie chart. default to false

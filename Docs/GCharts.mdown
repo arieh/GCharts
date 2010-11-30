@@ -1,0 +1,56 @@
+Class: GCharts {#GCharts}
+==========================================
+This is the base Class for all chart classes. It provides the basic options and configurations for creating charts using the google chart API
+
+GCharts Method: constructor {#GCharts:constructor}
+---------------------------------
+### Example:
+
+	var chart = new GCharts(items[,options]);
+
+### Arguments:
+
+1. items - (`Array`) an array of items to create the chart from. All items are literal objects, and should at least have a value attribute (value structure varries between implementations) and a name attribute (string)
+1. options - (`object`: optional) See below.
+
+### Options:
+
+* defaultColor (`string`) a  6 digit hex representation for the default color to use for chart items. When set to empty string, will use the default chart colors (default - empty string)
+* generate (`bool`) whether to generate the image on construction (default: true)
+* labels (`bool`) whether to display the item labels on the chart. Note - different chart types use this options differently. (default : ture)
+* legend (`bool`) whether or not to display a legend. (default:true)
+* legendPosition (`string`) where to position the legend. can be:
+    * bottom
+    * bottom-vertical
+    * top
+    * top-vertical
+    * right
+    * left (default)
+* target (`Element`) a target element to inject the image. (default : `null`)
+* title (`string`) a title for the chart. Line break can either use `\n` or `|`.
+* sizeX (`int`) vertical image size in pixels. (default : 300)
+* sizeY (`int`) horizontal image size in pixels. (default : 150)
+
+GCharts Method: generate {#GCharts:generate}
+------------------------
+generates the image.
+### Example:
+
+    charts.generate();
+    
+GCharts Method: toElement {#GCharts:toElement}
+---------------
+document.id helper. provides the image element.
+
+Class: GCharts.Graphs {#GCharts.Graphs}
+==========================================
+This is the base Class for all graph based charts. It provides the basic options and configurations for these types of charts.
+
+Special Options {#GCharts.Graphs:options}
+-------------------
+* titleX (`string`|`Array`): a title for the x axis. If array is provided, will use it to set values to the axis.
+* titleY (`string`|`Array`): a title for the y axis. If array is provided, will use it to set values to the axis.
+* showX (`bool`) whether or not to display the x axis.
+* showY (`bool`) whether or not to display the y axis.
+* rangeX (`Array`) a range for the axis. made of 3 parts: `[start,end [,step] ]`. Note - for non-numeric values, use the titleX option as an array.
+* rangeY (`Array`) a range for the axis. made of 3 parts: `[start,end [,step] ]`. Note - for non-numeric values, use the titleY option as an array.
