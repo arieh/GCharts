@@ -10,7 +10,7 @@ authors:
 requires:
 - core/1.3 : [Core,Class,Class.Extras,Element,Element.Event,Array]
 
-provides: [Gestures,Gestures.Directions]
+provides: [GCharts,GCharts.Graphs,GCharts.Columns,GCharts.Lines,GCharts.Pies]
 
 ...
 */
