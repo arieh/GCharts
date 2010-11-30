@@ -14,7 +14,7 @@ GCharts = new Class({
     }
     , legendPositions : {
         'bottom' : 'b'
-        , 'botton-vertical' : 'bv'
+        , 'bottom-vertical' : 'bv'
         , 'top' : 't'
         , 'top-vertical' : 'tv'
         , 'right' : 'r'
@@ -140,7 +140,7 @@ GCharts.Columns = new Class({
       
         this.src += this.vertical ? '&cht=bvg' : '&cht=bhg';
         this.src += '&chd=t:' + this.items.join(',');
-        this.src += '&chbh=' + this.options.width + this.options.space;
+        this.src += '&chbh=' + this.options.width +',' +this.options.space;
         this.parent();
     }
 });
@@ -204,8 +204,8 @@ GCharts.Pie = new Class({
     , generateUrl : function(){
         this.src += '&chd=t:' + this.items.join(',');
         this.src += '&cht=p';
-        if (this.options.labels) this.src += '&chl=' + this.names.join('|');
         if (this.options['3d']) this.src+='3';
+        if (this.options.labels) this.src += '&chl=' + this.names.join('|');
         this.src += "&chco=" + this.colors.join('|');
         this.parent();
     }
